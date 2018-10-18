@@ -1,0 +1,29 @@
+{
+	"name": "template_react",
+	"version": "1.0.0",
+	"description": "QRadar React sample app",
+	"main": "index.js",
+	"scripts": {
+		"watch": "webpack --progress -d --config webpack.config.js --watch --development",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@babel/core": "^7.1.0",
+		"@babel/preset-env": "^7.1.0",
+		"babel-loader": "^8.0.2",
+		"react": "^16.5.2",
+		"react-dom": "^16.5.2",
+		"webpack": "^4.19.1",
+		"webpack-cli": "^3.1.0"
+	},
+	"babel": {
+		"presets": [
+			"@babel/react"
+		]
+	},
+	"dependencies": {
+		"@babel/preset-react": "^7.0.0"
+	}
+}

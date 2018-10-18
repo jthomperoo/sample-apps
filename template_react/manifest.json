@@ -1,0 +1,27 @@
+{
+	"version": "1.0",
+	"name": "React App",
+	"description": "Sample Application using React, Babel and Webpack",
+	"uuid": "9086a441-2470-4c0c-a19d-66615c510745",
+	"areas": [
+		{
+			"url": "index",
+			"text": "React App",
+			"required_capabilities": [
+				"ADMIN"
+			],
+			"id": "QReactApp",
+			"description": "Sample Application using React, Babel and Webpack"
+		}
+	],
+	"services": [
+		{
+			"name":"webpack_watch_service",
+			"process_name" : "webpack_watch",
+            "version":"1.0",
+			"command":"npm run watch --prefix /src",
+			"stdout_logfile":"/store/log/app.log",
+			"stderr_logfile":"/store/log/err.log"
+		}
+	]
+}

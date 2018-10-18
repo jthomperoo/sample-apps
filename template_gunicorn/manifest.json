@@ -1,0 +1,37 @@
+{
+	"version": "1.0",
+	"name": "Gunicorn App",
+	"description": "Sample application using Gunicorn",
+	"uuid": "3740b661-a809-4a9f-82c9-905c4acbfeb6",
+	"load_flask": "false",
+	"areas": [
+		{
+			"url": "/",
+			"text": "Gunicorn App",
+			"required_capabilities": [
+				"ADMIN"
+			],
+			"id": "QGunicorn",
+			"named_service" : "gunicorn_server",
+			"description": "Sample application using Gunicorn"
+		}
+	],
+	"services": [
+		{
+			"name": "gunicorn_server",
+			"process_name": "gunicorn_server",
+			"version": "1.0",
+			"command": "gunicorn -w 4 views:app --chdir /app/ -b :5000 --reload",
+			"stdout_logfile": "/store/log/app.log",
+			"stderr_logfile": "/store/log/err.log",
+			"endpoints": [
+				{
+					"name": "gunicorn_server",
+					"path": "/",
+					"http_method": "GET"
+				}
+			],
+			"port": 5000
+		}
+	]
+}

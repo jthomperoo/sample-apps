@@ -1,0 +1,2 @@
+/src_deps/init/install_nodejs.sh
+/src_deps/init/install_node_dependencies.sh

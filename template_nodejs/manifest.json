@@ -1,0 +1,37 @@
+{
+	"version": "1.0",
+	"name": "NodeJS App",
+	"description": "Sample application using NodeJS and Express",
+	"uuid": "ea6f4e02-e384-435d-8687-135b38a090b2",
+	"load_flask": "false",
+	"areas": [
+		{
+			"url": "/",
+			"text": "NodeJS App",
+			"named_service" : "express_server",
+			"required_capabilities": [
+				"ADMIN"
+			],
+			"id": "QNodeJS",
+			"description": "Sample application using NodeJS and Express"
+		}
+	],
+	"services": [
+		{
+			"name": "express_server",
+			"process_name": "express_server",
+			"version": "1.0",
+			"command": "nodemon app/app.js --watch app",
+			"stdout_logfile": "/store/log/app.log",
+			"stderr_logfile": "/store/log/err.log",
+			"endpoints": [
+				{
+					"name": "express_server",
+					"path": "/",
+					"http_method": "GET"
+				}
+			],
+			"port": 5000
+		}
+	]
+}
